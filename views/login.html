@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<title>hapi notebook</title>
+	<link rel="stylesheet" href="/assets/css/stylesheet.css" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+	<!-- </header> -->
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<h1><a href="/">Hapi Notebook</a></h1>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="errContainer">
+			{{#if errMsg}}
+			<span class="errMsg">{{errMsg}}</span> {{/if}} {{#if successMsg}}
+			<span class="errMsg">{{successMsg}}</span> {{/if}}
+		</div>
+		<div class="formContainer">
+			<form action="login" method="POST">
+				<div class="form-row">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="text" id="emailField" class="form-control" name="email" placeholder="Your Email">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" id="passwordField" class="form-control" name="password" placeholder="Password">
+					</div>
+					<div class="register">
+						<a href="register">New user?</a>
+						<input type="submit" value="Login" class="btn-success btn">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
