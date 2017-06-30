@@ -12,6 +12,11 @@ body {
   line-height: 1.42857143;
   color: #333;
 }
+
+a{
+  text-decoration: none!important;
+}
+
 .header{
   width: 100%;
   height: 60px;
@@ -20,8 +25,8 @@ body {
   position: relative;
   margin: 0 0 50px;
   -webkit-box-shadow: 0 8px 6px -6px rgb(97, 97, 97);
-	-moz-box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
-	box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
+  -moz-box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
+  box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
 
 }
 .container{
@@ -36,7 +41,7 @@ body {
 }
 
 .containerHeading{
-  width: 100%;
+  width: 20%;
   height: 50px;
   background: #5cb85c;
   border-bottom: 1px dashed #ccc;
@@ -119,33 +124,30 @@ a {
   text-decoration: none;
 }
 
-a:focus, a:hover {
-  color: #23527c;
-  text-decoration: underline;
-}
+
 a:active, a:hover {
   outline: 0;
 }
 .btn{
   display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 .login{
   width: 40px;
@@ -157,12 +159,12 @@ a:active, a:hover {
   float: right;
 }
 .logout,.myNotes{
-    width: 15%;
-    position: relative;
-    height: inherit;
-    top:0;
-    text-align: center;
-    line-height: 60px;
+  width: 15%;
+  position: relative;
+  height: inherit;
+  top:0;
+  text-align: center;
+  line-height: 60px;
 }
 
 .header .logout a,.header .myNotes a{
@@ -185,16 +187,16 @@ a:active, a:hover {
 }
 
 .newCards {
-    display: inline-block;
-    width: 18%;
-    min-width: 180px;
-    margin-right: 2%;
-    margin-bottom: 10px;
-    font-weight: 700;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    box-shadow: 1px 1px 1px 1px #ccc;
-    cursor: pointer;
+  display: inline-block;
+  width: 18%;
+  min-width: 180px;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  cursor: pointer;
 }
 
 .newCards:hover{
@@ -206,7 +208,7 @@ a:active, a:hover {
   margin: 0 auto;
 }
 .cardContainer img{
-width: 100%;
+  width: 100%;
 }
 //down arrow
 
@@ -299,41 +301,41 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 }
 
 .btn-success:hover, .btn-success:focus {
-	color: #fff;
+  color: #fff;
 }
 
 .title {
-	font-size: 300%;
-	margin: 100px 0 15px;
-	text-align: center;
+  font-size: 300%;
+  margin: 100px 0 15px;
+  text-align: center;
 }
 
 .sub-title {
-	text-align: center;
-	margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .button {
-	margin: 50px auto;
-	text-align: center;
+  margin: 50px auto;
+  text-align: center;
 }
 
 button > a {
-	color: white;
+  color: white;
 }
 
 footer {
-	bottom: 0;
-	position: fixed;
-	margin-bottom: 20px;
-	width: 70%;
-	text-align: center;
+  bottom: 0;
+  position: fixed;
+  margin-bottom: 20px;
+  width: 70%;
+  text-align: center;
   height: 30px;
 }
 
 footer a{
   color: #5cb85c;
-    line-height: 30px;
+  line-height: 30px;
 }
 
 footer a:hover{
@@ -343,31 +345,31 @@ footer a:hover{
 }
 
 .new_card {
-	text-align: center;
-	margin: 50px 0 15px;
+  text-align: center;
+  margin: 50px 0 15px;
 }
 
 .new_card > .new_title {
-	font-size: 200%;
-	margin-bottom: 20px;
+  font-size: 200%;
+  margin-bottom: 20px;
 }
 
 .new_card img {
-	max-width: 200px;
-	max-height: 200px
+  max-width: 200px;
+  max-height: 200px
 }
 
 form > input{
-	font-size: 14px;
-	line-height: 1.42857143;
-	height: 34px;
-	padding: 6px 12px;
-	border-radius: 3px;
-	border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 1.42857143;
+  height: 34px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
 
 .delete-card {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 form {
@@ -375,14 +377,14 @@ form {
 }
 
 .form-group {
-	flex-grow: 1;
-	padding-left: 10px;
-	text-align: left;
-	margin-bottom: 15px;
+  flex-grow: 1;
+  padding-left: 10px;
+  text-align: left;
+  margin-bottom: 15px;
 }
 
 .form-row {
-	margin-left: -10px;
+  margin-left: -10px;
 }
 
 .form-control {
@@ -431,16 +433,16 @@ input[type=checkbox], input[type=radio] {
 .cards,
 .card-images,
 .form-row {
-	list-style-type: none;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	justify-content: flex-start;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
 
 }
 .form-row {
-    width: 250px;
-    margin: 0 auto;
+  width: 250px;
+  margin: 0 auto;
 }
 .register{
   margin: 0 auto;
@@ -456,7 +458,7 @@ input[type=checkbox], input[type=radio] {
   width: 100%;
 }
 .cards {
-	padding-left: 25px;
+  padding-left: 25px;
 }
 
 .card-images > label {
@@ -464,65 +466,65 @@ input[type=checkbox], input[type=radio] {
   border: 2px solid #03A9F4;
 }
 .card-images > label > input {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 .cards > li {
-	box-sizing: border-box;
-	border-radius: 7px;
-	border: 1px solid #ddd;
-	margin-right: 25px;
-	padding: 15px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  border: 1px solid #ddd;
+  margin-right: 25px;
+  padding: 15px;
   float: left;
   min-width: 250px;
 }
 .cards > li > img {
-	max-width: 250px;
+  max-width: 250px;
 }
 
 .user,
 .login {
-	position: absolute;
-	top: 25px;
-	right: 25px;
-	width: 160px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 160px;
 }
 
 .user > img {
-	border-radius: 50%;
-	float: left;
+  border-radius: 50%;
+  float: left;
 }
 
 .user .welcome {
-	float: left;
-	text-align: center;
+  float: left;
+  text-align: center;
 }
 
 .user .logout {
-	text-align: center;
+  text-align: center;
 }
 
 .user > .text {
-	float: left;
-	margin: 20px 0 0 15px;
+  float: left;
+  margin: 20px 0 0 15px;
 }
 
 .promo {
-	margin-top: 30px;
-	text-align: center;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .card .recipient {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .card > .actions {
-	margin-top: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 .card > .actions > a {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 form > input[type=file] {
@@ -530,8 +532,8 @@ form > input[type=file] {
 }
 
 header {
-	height: 110px;
-	margin-left: 25px;
+  height: 110px;
+  margin-left: 25px;
 }
 
 .main-card-image {
@@ -548,9 +550,29 @@ header {
 .headingList{
   width: 20%;
   height: 550px;
-  overflow: hidden;
+  overflow-y: scroll;
   border-right: 1px solid #ccc;
   box-shadow: 6px 0px 6px -7px rgb(97, 97, 97)
+}
+
+/*SCROLL*/
+
+#scroll::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#scroll::-webkit-scrollbar
+{
+  width: 10px;
+	background-color: ##5cb85c;
+}
+
+#scroll::-webkit-scrollbar-thumb
+{
+  background-color: #5cb85c;
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 
 .headingList .nav-tabs{
@@ -570,8 +592,18 @@ header {
 
 .headingList .nav-tabs li a{
   display: inline-block;
-  color: #337ab7;
+  color: #5cb85c;
   border: none;
+  line-height: normal;
+}
+
+
+.headingList .nav-tabs li a:first-child{
+  width: 80%;
+}
+
+.headingList .nav-tabs li a:last-child{
+  width: 20%;
 }
 
 .headingList .nav-tabs li a:link,
@@ -586,19 +618,53 @@ header {
 .headingList .nav-tabs li a.delete{
   position: absolute;
   right: 0;
+  right: 0;
+  margin: 0;
+}
+
+.headingList .nav-tabs li a.delete:hover{
+  background: #ccc;
+  border-radius: 0;
+}
+
+.glyphicon{
+  line-height: normal;
 }
 
 .notePreview{
   width: 80%;
-  height: 550px;
+  height: 600px;
+  position: relative;
+  top: -50px;
 }
 .notePreview .noteHeading{
   width: 100%;
   height: 50px;
   padding: 20px;
   color: #fff;
-  background: #337ab7;
+  background: #5cb85c;
   position: relative;
+  border-left:1px dashed #ccc;
+  border-bottom:1px dashed #ccc;
+}
+
+.newNoteLink{
+  width: 100px;
+  position: absolute;
+  right: 0;
+  color: #fff;
+}
+
+.newNoteLink a{
+  color: #fff;
+}
+
+.fullHeading{
+  width: 100%;
+  height: 50px;
+  background: #5cb85c;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
 }
 
 .notePreview .noteValue{
@@ -615,10 +681,10 @@ header {
 }
 
 /*.headingList ul{
-  list-style: none;
-  width: 100%;
+list-style: none;
+width: 100%;
 }
 
 .headingList ul > li{
-  width: 100%;
+width: 100%;
 }*/

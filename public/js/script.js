@@ -8,7 +8,7 @@ $(document).ready(function() {
       method:'GET',
       dataType:'text json',
       success:function(result) {
-        $('.notePreview .noteHeading > h4').text(result.noteHeading);
+        $('.notePreview .noteHeading > span').text(result.noteHeading);
         console.log(result.noteValue);
         $('.notePreview .noteValue > p').text(result.noteValue);
       },
