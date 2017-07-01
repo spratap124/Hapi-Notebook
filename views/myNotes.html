@@ -3,21 +3,24 @@
 <head>
 	<title>hapi Greetings</title>
 
+	<!-- <link rel="stylesheet" href="/assets/css/stylesheet.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all"> -->
+
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="/assets/css/stylesheet.css" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/MyStyle.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body>
-	<!-- </header> -->
+
 	<div class="header">
 		<div class="myNotes lfloat">
 			<span>
 				<a href="/myNotes">My Notes</a>
 			</span>
 		</div>
-		<div class="container lfloat">
+		<div class="container myNotesContainer lfloat">
 			<div class="logo">
 				<h1><a href="/">Hapi Notebook</a></h1>
 			</div>
@@ -29,33 +32,36 @@
 		</div>
 	</div>
 
+
 	<div class="container wrapper">
 		<div class="containerHeading">
 			<h1>My Note</h1>
 		</div>
-		<div class="headingList lfloat" id="scroll">
-				<ul class="nav nav-tabs nav-stacked">
-					{{#each myNotes}}
-					<li>
-						<a href="javascript:void(0)" data-role="/preview/{{@key}}" class="lfloat"><span>{{this.noteHeading}}</span></a>
-						<a href="/delete/{{@key}}" class="delete rfloat"><span class="glyphicon glyphicon-remove"></span></a></li>
-					{{/each}}
-				</ul>
+		<div class="headingList lfloat sidebar-nav" id="scroll">
+			<ul class="nav nav-tabs nav-stacked">
+				{{#each myNotes}}
+				<li role="presentation">
+					<a href="javascript:void(0)" data-role="/preview/{{@key}}" class="lfloat"><span>{{this.noteHeading}}</span></a>
+					<a href="/delete/{{@key}}" class="delete rfloat"><span class="glyphicon glyphicon-remove"></span></a>
+				</li>
+				{{/each}}
+			</ul>
+
 
 		</div>
-		<div class="notePreview lfloat">
-				<div class="noteHeading">
-					<span class="lfloat"></span>
-					<div class="newNoteLink rfloat">
-						<a href="notes/new" class="" role="button">
-							<span class="glyphicon glyphicon-plus"></span>New Note
-						</a>
-					</div>
+		<div class="notePreview rfloat">
+			<div class="noteHeading">
+				<span class="lfloat"></span>
+				<div class="newNoteLink rfloat">
+					<a href="notes/new" class="" role="button">
+						<span class="glyphicon glyphicon-plus"></span>New Note
+					</a>
+				</div>
 
-				</div>
-				<div class="noteValue">
-					<p></p>
-				</div>
+			</div>
+			<div class="noteValue">
+				<p></p>
+			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

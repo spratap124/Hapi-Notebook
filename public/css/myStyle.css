@@ -1,0 +1,268 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  color: #333;
+  background: url(/assets/img/bg1.png);
+  font-family: "Century Gothic",Arial, Helvetica, sans-serif;
+}
+
+h1{
+  font-size: 2em !important;
+}
+
+a,a:link,a:visited,a:hover,a:active{
+  text-decoration: none!important;
+  color: #fff;
+}
+
+.lfloat{
+  float: left;
+}
+
+.rfloat{
+  float: right;
+}
+
+
+
+
+/*HEADER*/
+
+.header{
+  width: 100%;
+  height: 60px;
+  background: #337ab7;
+  border-color: #2e6da4;
+  position: relative;
+  margin: 0 0 50px;
+  -webkit-box-shadow: 0 8px 6px -6px rgb(97, 97, 97);
+  -moz-box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
+  box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
+}
+
+.container{
+  width: 70% !important;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+.container h1{
+  color: #fff;
+  line-height: 60px;
+  margin: 0;
+}
+
+.headContainer{
+  float: left;
+}
+
+.logo {
+    text-align: center;
+}
+
+.myNotesContainer{
+  display: inline-block;
+  margin-left: 15%;
+}
+
+.logout,.myNotes{
+  width: 15%;
+  position: absolute;
+  display: inline-block;
+  height: inherit;
+  top:0;
+  text-align: center;
+  line-height: 60px;
+}
+
+.header .logout a,.header .myNotes a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.title{
+  font-size: 3em;
+  text-align: center;
+  margin: 100px 0 15px;
+}
+
+.sub-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin: 50px auto;
+  text-align: center;
+}
+
+button > a {
+  color: white;
+}
+
+/*LOGIN*/
+
+.form-group{
+  width: 40%;
+  margin: 20px auto;
+}
+
+.form-group .register{
+  color: #337ab7;
+}
+
+/*CONTENT*/
+
+.wrapper{
+  height: 600px;
+  box-shadow: 1px 1px 1px -1px rgba(0,0,0,0.2), 1px 1px 10px 0px rgba(0,0,0,0.19);
+}
+
+.containerHeading{
+  width: 20%;
+  height: 50px;
+  background: #337ab7;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+}
+
+.notePreview{
+  width: 80%;
+  height: 600px;
+  position: relative;
+  top: -50px;
+}
+.notePreview .noteHeading{
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  color: #fff;
+  background: #337ab7;
+  position: relative;
+  border-left:1px dashed #ccc;
+  border-bottom:1px dashed #ccc;
+}
+
+.headingList{
+  width: 20%;
+  height: 550px;
+  overflow-y: scroll;
+  border-right: 1px solid #ccc;
+  box-shadow: 6px 0px 6px -7px rgb(97, 97, 97)
+}
+
+.headingList .nav-tabs{
+  border: none;
+}
+.headingList .nav-tabs li{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 0px 0px #cac6c6;
+  cursor: pointer;
+}
+
+.headingList .nav-tabs li:hover{
+  background: #eee;
+}
+
+.headingList .nav-tabs li a{
+  display: inline-block;
+  color: #525252;
+  border: none;
+  line-height: normal;
+}
+
+
+.headingList .nav-tabs li a:first-child{
+  width: 80%;
+}
+
+.headingList .nav-tabs li a:last-child{
+  width: 20%;
+}
+
+.headingList .nav-tabs li a:link,
+.headingList .nav-tabs li a:visited,
+.headingList .nav-tabs li a:hover,
+.headingList .nav-tabs li a:active
+{
+  border:none;
+  background: none;
+}
+
+.headingList .nav-tabs li a.delete{
+  position: absolute;
+  right: 0;
+  right: 0;
+  margin: 0;
+}
+
+.headingList .nav-tabs li a.delete:hover{
+  background: #ccc;
+  border-radius: 0;
+}
+
+.glyphicon{
+  line-height: normal;
+}
+.active{
+  background: #337ab7;
+}
+
+.fullHeading{
+  width: 100%;
+  height: 50px;
+  background: #337ab7;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+}
+
+.form-control.textarea{
+  width: 470px;
+  height: 250px;
+}
+
+
+.notePreview .noteValue {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    color: #337ab7;
+    padding: 100px;
+}
+
+.notePreview .noteValue p {
+    line-height: 25px;
+    white-space: pre;
+}
+
+/*FOOTER*/
+
+
+footer {
+  bottom: 0;
+  position: fixed;
+  margin-bottom: 20px;
+  width: 70%;
+  text-align: center;
+  height: 30px;
+}
+
+.footer a{
+  color: #337ab7;
+  line-height: 30px;
+}
+
+footer a:hover{
+  color: #5cb85c;
+  text-decoration: none;
+
+}

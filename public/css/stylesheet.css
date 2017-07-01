@@ -7,14 +7,15 @@
 }
 
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
-  line-height: 1.42857143;
   color: #333;
+  background: url(/assets/img/bg1.png);
+  font-family: "Century Gothic",Arial, Helvetica, sans-serif;
 }
 
 a{
   text-decoration: none!important;
+  color: #fff;
 }
 
 .header{
@@ -27,7 +28,6 @@ a{
   -webkit-box-shadow: 0 8px 6px -6px rgb(97, 97, 97);
   -moz-box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
   box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
-
 }
 .container{
   width: 70% !important;
@@ -35,9 +35,13 @@ a{
   padding: 0 !important;
 }
 
+.logo {
+    text-align: center;
+}
+
 .container h1{
   color: #fff;
-  line-height: 50px;
+  line-height: 60px;
 }
 
 .containerHeading{
@@ -51,6 +55,7 @@ a{
 leble{
   float: left;
 }
+
 .headContainer{
   float: left;
 }
@@ -107,22 +112,12 @@ leble{
   margin: 0 auto;
 }
 
-.header .container a{
-  color: #fff;
-  text-decoration: none;
-  line-height: 60px;
-  font-size: 2em;
-}
 :after, :before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-a {
-  color: #337ab7;
-  text-decoration: none;
-}
 
 
 a:active, a:hover {
@@ -172,19 +167,7 @@ a:active, a:hover {
   text-decoration: none;
 }
 
-.h3, h3 {
-  font-size: 24px;
-}
-.h1, .h2, .h3, h1, h2, h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-}
+
 
 .newCards {
   display: inline-block;
@@ -679,12 +662,3 @@ header {
   line-height: 25px;
   white-space: pre;
 }
-
-/*.headingList ul{
-list-style: none;
-width: 100%;
-}
-
-.headingList ul > li{
-width: 100%;
-}*/

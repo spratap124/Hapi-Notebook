@@ -2,8 +2,10 @@
 
 <head>
 	<title>hapi notebook</title>
-	<link rel="stylesheet" href="/assets/css/stylesheet.css" />
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<!-- <link rel="stylesheet" href="/assets/css/stylesheet.css" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="/assets/css/MyStyle.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body>
@@ -15,32 +17,37 @@
 			</div>
 		</div>
 	</div>
+	<!-- </header> -->
 	<div class="container">
-		<div class="errContainer">
-			{{#if errMsg}}
-			<span class="errMsg">{{errMsg}}</span> {{/if}} {{#if successMsg}}
-			<span class="errMsg">{{successMsg}}</span> {{/if}}
+
+		{{#if successMsg}}
+		<div class="alert alert-success alert-dismissible" role="alert">
+			<strong>Well done!</strong> {{successMsg}}
 		</div>
-		<div class="formContainer">
-			<form action="login" method="POST">
-				<div class="form-row">
-					<div class="form-group">
-						<label for="email">Email</label>
-						<input type="text" id="emailField" class="form-control" name="email" placeholder="Your Email">
-					</div>
+	  {{/if}}
+
+		{{#if errMsg}}
+				<div class="alert alert-danger alert-dismissible" role="alert">
+					<strong>Oops!</strong> {{errMsg}}
 				</div>
-				<div class="form-row">
-					<div class="form-group">
-						<label for="password">Password</label>
-						<input type="password" id="passwordField" class="form-control" name="password" placeholder="Password">
-					</div>
-					<div class="register">
-						<a href="register">New user?</a>
-						<input type="submit" value="Login" class="btn-success btn">
-					</div>
-				</div>
-			</form>
-		</div>
+		{{/if}}
+		<!-- <div class="formContainer"> -->
+		<form action="login" method="POST">
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="text-muted">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1" class="text-muted">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+			</div>
+			<div class="form-group">
+				<a href="register" class="register">New user?</a>
+				<button type="submit" name="button" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+		<!-- </div> -->
 	</div>
 </body>
 </html>
