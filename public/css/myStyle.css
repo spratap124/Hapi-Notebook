@@ -51,6 +51,7 @@ a,a:link,a:visited,a:hover,a:active{
   width: 70% !important;
   margin: 0 auto;
   padding: 0 !important;
+  position: relative;
 }
 
 .container h1{
@@ -64,7 +65,7 @@ a,a:link,a:visited,a:hover,a:active{
 }
 
 .logo {
-    text-align: center;
+  text-align: center;
 }
 
 .myNotesContainer{
@@ -153,7 +154,6 @@ button > a {
 .headingList{
   width: 20%;
   height: 550px;
-  overflow-y: scroll;
   border-right: 1px solid #ccc;
   box-shadow: 6px 0px 6px -7px rgb(97, 97, 97)
 }
@@ -217,6 +217,134 @@ button > a {
   background: #337ab7;
 }
 
+.listcontainer{
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.trash{
+  height: 50px;
+  background: #337ab7;
+  color: #fff;
+}
+
+.trash a{
+  float: right;
+  line-height: 50px;
+  font-size: 1.2em;
+  position: relative;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+
+/*TRASH*/
+
+.trashContainer{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top:0;
+  background: rgba(0,0,0,0.5);
+}
+
+.trashContainer .trashListWrapper{
+  width: 350px;
+  height: 400px;
+  background: #e5e5e5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.trashListWrapper .trashHeading{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: #337ab7;
+  color: #fff;
+}
+
+.trashHeading h4{
+  margin: 0;
+  line-height: 50px;
+  width: 85%;
+}
+
+.trashContainer .closePanel{
+  width: 15%;
+  height: 50px;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.trashContainer .closePanel span{
+  cursor: pointer;
+  color: #337ab7;
+  font-size: 1.8em;
+  line-height: 50px;
+}
+
+.trashList{
+  width: 100%;
+  height: 350px;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.trashList ul > li{
+  width: 100%;
+  position: relative;
+  box-shadow: 0 1px 0px 0px #cac6c6;
+}
+
+.trashList ul > li h5{
+  display: inline-block;
+  width: 70%;
+  padding: 0 40px;
+  line-height: 50px;
+  margin: 0;
+}
+
+.trashList ul > li .unDelete, .trashList ul > li .hardDelete{
+  width: 15%;
+  height: 50px;
+  border-left: 1px solid #ddd;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+
+
+.trashList ul > li > div >a{
+  display: block;
+  color: #337ab7;
+}
+
+.trashList ul > li > div >a:hover{
+  background: #337ab7;
+  color: #fff;
+}
+
+.trashList ul > li > div >a >span{
+  cursor: pointer;
+
+  font-size: 0.9em;
+  line-height: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
 .fullHeading{
   width: 100%;
   height: 50px;
@@ -232,16 +360,16 @@ button > a {
 
 
 .notePreview .noteValue {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    color: #337ab7;
-    padding: 100px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  color: #337ab7;
+  padding: 100px;
 }
 
 .notePreview .noteValue p {
-    line-height: 25px;
-    white-space: pre;
+  line-height: 25px;
+  white-space: pre;
 }
 
 /*FOOTER*/
@@ -264,5 +392,16 @@ footer {
 footer a:hover{
   color: #5cb85c;
   text-decoration: none;
+}
 
+/*404*/
+
+.content{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content h3{
+  margin-top: 30px;
 }

@@ -2,12 +2,6 @@
 
 <head>
 	<title>hapi Greetings</title>
-
-	<!-- <link rel="stylesheet" href="/assets/css/stylesheet.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all"> -->
-
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="/assets/css/MyStyle.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -32,22 +26,24 @@
 		</div>
 	</div>
 
-
 	<div class="container wrapper">
 		<div class="containerHeading">
 			<h1>My Note</h1>
 		</div>
-		<div class="headingList lfloat sidebar-nav" id="scroll">
-			<ul class="nav nav-tabs nav-stacked">
-				{{#each myNotes}}
-				<li role="presentation">
-					<a href="javascript:void(0)" data-role="/preview/{{@key}}" class="lfloat"><span>{{this.noteHeading}}</span></a>
-					<a href="/delete/{{@key}}" class="delete rfloat"><span class="glyphicon glyphicon-remove"></span></a>
-				</li>
-				{{/each}}
-			</ul>
-
-
+		<div class="headingList lfloat sidebar-nav" >
+			<div class="listcontainer" id="scroll">
+				<ul class="nav nav-tabs nav-stacked">
+					{{#each myNotes}}
+					<li role="presentation">
+						<a href="javascript:void(0)" data-role="/preview/{{@key}}" class="lfloat"><span>{{this.noteHeading}}</span></a>
+						<a href="/delete/{{@key}}?type=softdel" class="delete rfloat"><span class="glyphicon glyphicon-remove"></span></a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="trash">
+				<a href="myTrash"><span class="glyphicon glyphicon-trash"></span></a>
+			</div>
 		</div>
 		<div class="notePreview rfloat">
 			<div class="noteHeading">
@@ -57,12 +53,41 @@
 						<span class="glyphicon glyphicon-plus"></span>New Note
 					</a>
 				</div>
-
 			</div>
 			<div class="noteValue">
 				<p></p>
 			</div>
 		</div>
+
+<!-- TRASH -->
+
+		<div class="trashContainer" id="trash">
+			<div class="trashListWrapper">
+				<div class="trashHeading">
+					<h4>My Trash</h4>
+					<div class="closePanel">
+						<span class="glyphicon glyphicon-remove"></span>
+					</div>
+				</div>
+				<div class="trashList">
+					<ul class="nav nav-tabs">
+
+						<!-- this will be populated throug ajax -->
+						<!-- <li>
+							<h5 class="lfloat"></h5>
+							<div class="unDelete lfloat">
+								<a href="/unDelete/{{noteId}}"><span class="glyphicon glyphicon-repeat"></span></a>
+							</div>
+							<div class="hardDelete lfloat">
+								<a href="/hardDelete/{{noteId}}"><span class="glyphicon glyphicon-trash"></span></a>
+							</div>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<!-- TRASH END-->
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

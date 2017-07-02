@@ -17,13 +17,39 @@ function getMyNotes (request, reply) {
       reply("you are not authoised to view this page").code(401);
     }else {
       var userId =  data;
-      var myNotes= notes[userId];
-      //console.log("my nots are===="+myNotes);
-      reply.view('myNotes',{myNotes:myNotes});
+      var myAllNotes= notes[userId];       // get all the notes both deleted and undeleted
+      var myUndeletedNotes ={};
+      for(var note in myAllNotes){
+        if (!myAllNotes[note].isDelete) {
+            myUndeletedNotes[note] = myAllNotes[note];
+        }
+      }
+      reply.view('myNotes',{myNotes:myUndeletedNotes});
     }
-
   });
 }
+
+function myTrash (request, reply) {
+  //get token from cookies
+  var token = request.state.token;
+  //verify the token and get the userId
+  jwt.verify(token,SECRET_KEY,function(err, data) {
+    if(err){
+      reply("you are not authoised to view this page").code(401);
+    }else {
+      var userId =  data;
+      var myAllNotes= notes[userId];       // get all the notes both deleted and undeleted
+      var myDeletedNotes ={};
+      for(var note in myAllNotes){
+        if (myAllNotes[note].isDelete) {
+            myDeletedNotes[note] = myAllNotes[note];
+        }
+      }
+      reply(myDeletedNotes);
+    }
+  });
+}
+
 
 function newNotePage (request, reply) {
   //get token from cookies
@@ -45,6 +71,7 @@ function createNewNote (request, reply) {
   var newNote     = {
     noteHeading:request.payload.noteHeading,
     noteValue  :request.payload.noteValue,
+    isDelete   :false
   };
 
   //get token from cookies
@@ -82,7 +109,6 @@ function notePreview (request, reply) {
   var token = request.state.token;
   var notePreview ={};
 
-
     jwt.verify(token,SECRET_KEY,function(err,data) {
       if(err){
         reply("you are not authoised to view this page").code(401);
@@ -99,9 +125,6 @@ function notePreview (request, reply) {
                 notePreview = allNotes[note];
               }
           };
-          //console.log(notePreview);
-
-        //  reply.view('myNotes',{notePreview:notePreview});
       }
       console.log("notePreview is :==="+notePreview);
       reply(notePreview).code(200);
@@ -111,11 +134,11 @@ function notePreview (request, reply) {
 function deleteNote (request,reply) {
   //get the noteId from request
   var noteId = request.params.noteId;
+  var delType = request.query.type;
+  console.log(delType);
 
   //get token from cookies
   var token = request.state.token;
-
-
 
     jwt.verify(token,SECRET_KEY,function(err,data) {
       if(err){
@@ -125,16 +148,18 @@ function deleteNote (request,reply) {
 
         //get all the notes for this user
           var userNotes = notes[userId];
-
-        //  console.log("before delet===="+userNotes);
-
-        for(var note in userNotes) {
-            //  console.log(note);
-              if(note==noteId){
-                delete userNotes[note];
-              }
-          };
-        //  console.log("before delet===="+userNotes);
+          for(var note in userNotes) {
+              //  console.log(note);
+                if(note==noteId){
+                    if(delType=='softdel'){
+                      userNotes[note].isDelete = true;
+                    }else if (delType=='undel') {
+                      userNotes[note].isDelete = false;
+                    }else if(delType=='harddel') {
+                      delete userNotes[note];
+                    }
+                }
+            };
           notes[userId] = userNotes;
           fs.writeFileSync('./database/notes.json',JSON.stringify(notes));
           reply.redirect('/myNotes');
@@ -157,9 +182,10 @@ module.exports ={
   registerHandler :userModule.createUser,         //path:'/register'
   loginHandler    :userModule.validateUser,       //path:'/login'
   getMyNotes      :getMyNotes,                    //path:'/myNotes'
-  newNotePage     :newNotePage,                       //path:'/notes/new' method:'GET'
+  newNotePage     :newNotePage,                   //path:'/notes/new' method:'GET'
   createNewNote   :createNewNote,                 //path:'/notes/new' method:'POST'
   logoutHandler   :logoutHandler ,                //path:'/logout'
-  notePreview     :notePreview,                    ///preview/{noteId}
-  deleteNote      :deleteNote
+  notePreview     :notePreview,                   //preview/{noteId}
+  deleteNote      :deleteNote,
+  myTrash         :myTrash
 };

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   // Note Preview
   $('.headingList .nav li > a:first-child').click(function(event) {
     event.preventDefault();
@@ -14,20 +15,64 @@ $(document).ready(function() {
         $('.notePreview .noteValue > p').text(result.noteValue);
       },
       error:function(err) {
-        //console.log(err);
+        throw err;
       }
     });
   });
 
-//Sidebar
+  //TRASH//
 
-$('.headingList .nav li a').click(function() {
-  console.log("click");
-  var that = this;
-  $('.headingList .nav li').removeClass('active',function() {
-    console.log('removed');
-    $(that).addClass('active');
+  $('.trash > a').click(function() {
+    event.preventDefault();
+    $('.trashContainer').fadeIn(500);
+    var url = this.href;
+
+    $.ajax({
+      url:url,
+      method:'GET',
+      dataType:'text json',
+      success:function(result) {
+        console.log(result);
+        for(var noteId in result){
+
+          var $ul = $(".trashList > ul");
+          var $li = $("<li>");
+
+            var $h5 = $("<h5>",{"class":"lfloat"});
+
+            $h5.html(result[noteId].noteHeading);
+
+            var $unDelete = $("<div>",{class:"unDelete lfloat"});
+              var $undoLink = $("<a>",{href:"/delete/"+noteId+"?type=undel"});
+                var $undoSpan = $("<span>",{class:"glyphicon glyphicon-repeat"});
+
+            $undoLink.append($undoSpan);
+            $unDelete.append($undoLink);
+
+            var $hardDelete = $("<div>",{class:"hardDelete lfloat"});
+              var $hDelLink = $("<a>",{href:"/delete/"+noteId+"?type=harddel"});
+                var $hDelSpan = $("<span>",{class:"glyphicon glyphicon-trash"});
+
+            $hDelLink.append($hDelSpan);
+            $hardDelete.append($hDelLink);
+
+            $li.append($h5);
+            $li.append($unDelete);
+            $li.append($hardDelete);
+            $ul.append($li);
+        }
+      },
+      error:function(err) {
+        throw err;
+      }
+    });
+
   });
-});
+
+  //CLOSE THE TRASH PANEL
+
+  $('.closePanel').click(function() {
+    $('.trashContainer').fadeOut(500);
+  });
 
 });
