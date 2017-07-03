@@ -66,6 +66,16 @@ var handlers   = require('./handlers');
     handler:handlers.notePreview
   },
   {
+    path:'/edit/{noteId}',
+    method:'GET',
+    handler:handlers.editGET
+  },
+  {
+    path:'/edit/{noteId}',
+    method:'POST',
+    handler:handlers.updateNote
+  },
+  {
     path:'/myTrash',
     method:'GET',
     handler:handlers.myTrash
@@ -75,16 +85,6 @@ var handlers   = require('./handlers');
     method:'GET',
     handler:handlers.deleteNote
   },
-  // {
-  //   path:'/unDelete/{noteId}',
-  //   method:'GET',
-  //   handler:handlers.unDelete
-  // },
-  // {
-  //   path:'/hardDelete/{noteId}',
-  //   method:'GET',
-  //   handler:handlers.hardDelete
-  // },
   {
     path:'/logout',
     method:'GET',

@@ -9,10 +9,17 @@ $(document).ready(function() {
       url:url,
       method:'GET',
       dataType:'text json',
-      success:function(result) {
+      success:function(result,noteId) {
         $('.notePreview .noteHeading > span').text(result.noteHeading);
-        //console.log(result.noteValue);
         $('.notePreview .noteValue > p').text(result.noteValue);
+        console.log($('.edit a'));
+        $('.edit > a')[0].href="/edit/"+result.noteId;
+        $('.edit > a').css({"display":"block"});
+
+        $('.lastModified').css({"display":"block"});
+        $('.lastModified > span:last-child').html(result.lastModified);
+
+
       },
       error:function(err) {
         throw err;

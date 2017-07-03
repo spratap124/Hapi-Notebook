@@ -5,6 +5,7 @@ var jwt         = require('jsonwebtoken');
 var uuid        = require('uuid');
 var SECRET_KEY  = process.env.SECRET_KEY;
 var notes       = loadNotes();
+var moment      = require('moment');
 
 // handlers
 
@@ -14,7 +15,7 @@ function getMyNotes (request, reply) {
   //verify the token and get the userId
   jwt.verify(token,SECRET_KEY,function(err, data) {
     if(err){
-      reply("you are not authoised to view this page").code(401);
+      reply.view("401").code(401);
     }else {
       var userId =  data;
       var myAllNotes= notes[userId];       // get all the notes both deleted and undeleted
@@ -24,6 +25,7 @@ function getMyNotes (request, reply) {
             myUndeletedNotes[note] = myAllNotes[note];
         }
       }
+      //console.log(moment("20120620", "YYYYMMDD").fromNow());
       reply.view('myNotes',{myNotes:myUndeletedNotes});
     }
   });
@@ -35,7 +37,7 @@ function myTrash (request, reply) {
   //verify the token and get the userId
   jwt.verify(token,SECRET_KEY,function(err, data) {
     if(err){
-      reply("you are not authoised to view this page").code(401);
+      reply.view("401").code(401);
     }else {
       var userId =  data;
       var myAllNotes= notes[userId];       // get all the notes both deleted and undeleted
@@ -57,7 +59,7 @@ function newNotePage (request, reply) {
   //verify the token and get the userId
   jwt.verify(token,SECRET_KEY,function(err, data) {
     if(err){
-      reply("you are not authoised to view this page").code(401);
+    reply.view("401").code(401);
     }else {
       reply.view('new');
     }
@@ -71,7 +73,8 @@ function createNewNote (request, reply) {
   var newNote     = {
     noteHeading:request.payload.noteHeading,
     noteValue  :request.payload.noteValue,
-    isDelete   :false
+    isDelete   :false,
+    lastModified:moment(new Date()).format('MMMM-Do-YYYY, h:mm a')
   };
 
   //get token from cookies
@@ -79,7 +82,7 @@ function createNewNote (request, reply) {
   //verify the token and get the userId
   jwt.verify(token,SECRET_KEY,function(err, data) {
     if(err){
-      reply("you are not authoised to view this page").code(401);
+      reply.view("401").code(401);
     }else {
       var userId = data;
       var noteId = uuid.v1();
@@ -111,7 +114,7 @@ function notePreview (request, reply) {
 
     jwt.verify(token,SECRET_KEY,function(err,data) {
       if(err){
-        reply("you are not authoised to view this page").code(401);
+        reply.view("401").code(401);
       }else {
         var userId = data;
 
@@ -123,11 +126,77 @@ function notePreview (request, reply) {
             //  console.log(note);
               if(note==noteId){
                 notePreview = allNotes[note];
+                notePreview.noteId = noteId;
               }
           };
       }
-      console.log("notePreview is :==="+notePreview);
+      //console.log("notePreview is :==="+notePreview);
       reply(notePreview).code(200);
+    });
+}
+
+function editGET (request, reply) {
+  //get the noteId from request
+  var noteId = request.params.noteId;
+  //get token from cookies
+  var token = request.state.token;
+  var notePreview ={};
+
+    jwt.verify(token,SECRET_KEY,function(err,data) {
+      if(err){
+        reply.view("401").code(401);
+      }else {
+        var userId = data;
+
+        //get all the notes for this user
+          var allNotes = notes[userId];
+
+        for(var note in allNotes) {
+              if(note==noteId){
+                notePreview = allNotes[note];
+                notePreview.noteId = noteId;
+              }
+          };
+      }
+      //console.log(notePreview);
+      reply.view('edit',{notePreview}).code(200);
+    });
+  }
+
+
+function updateNote (request, reply) {
+  //get the noteId from request
+  var noteId = request.params.noteId;
+  //get token from cookies
+  var token = request.state.token;
+  var lastModified=moment(new Date()).format('MMMM-Do-YYYY, h:mm a');
+  console.log(lastModified);
+
+  var noteUpdated ={
+      noteHeading:request.payload.noteHeading,
+      noteValue:request.payload.noteValue,
+      isDelete: false,
+      lastModified:lastModified
+  };
+
+    jwt.verify(token,SECRET_KEY,function(err,data) {
+      if(err){
+        reply.view("401").code(401);
+      }else {
+        var userId = data;
+
+        //get all the notes for this user
+          var allNotes = notes[userId];
+
+        for(var note in allNotes) {
+              if(note==noteId){
+                allNotes[note]=noteUpdated;
+              }
+          };
+          fs.writeFileSync('./database/notes.json',JSON.stringify(notes));
+      }
+
+      reply.redirect('/myNotes');
     });
 }
 
@@ -142,7 +211,7 @@ function deleteNote (request,reply) {
 
     jwt.verify(token,SECRET_KEY,function(err,data) {
       if(err){
-        reply("you are not authoised to view this page").code(401);
+        reply.view("401").code(401);
       }else {
         var userId = data;
 
@@ -187,5 +256,7 @@ module.exports ={
   logoutHandler   :logoutHandler ,                //path:'/logout'
   notePreview     :notePreview,                   //preview/{noteId}
   deleteNote      :deleteNote,
-  myTrash         :myTrash
+  myTrash         :myTrash,
+  editGET         :editGET,
+  updateNote      :updateNote
 };

@@ -151,6 +151,10 @@ button > a {
   border-bottom:1px dashed #ccc;
 }
 
+.newNoteLink span{
+  margin-right: 10px;
+}
+
 .headingList{
   width: 20%;
   height: 550px;
@@ -222,6 +226,43 @@ button > a {
   overflow-y: scroll;
 }
 
+
+.edit{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  background: #337ab7;
+}
+
+.edit a{
+  position: absolute;
+  right: 20px;
+  display: none;
+}
+
+.edit a > span{
+  margin-right: 10px;
+  line-height: 50px;
+}
+
+.edit > .lastModified{
+  position: absolute;
+  left: 20px;
+  display: none;
+  color: #fff;
+  line-height: 50px;
+}
+.edit > .lastModified > span{
+  margin-right: 10px;
+}
+
+
+
+
+/*TRASH*/
+
+
 .trash{
   height: 50px;
   background: #337ab7;
@@ -237,9 +278,6 @@ button > a {
   right: 15px;
   transform: translateY(-50%);
 }
-
-
-/*TRASH*/
 
 .trashContainer{
   width: 100%;
