@@ -187,6 +187,7 @@ button > a {
 
 .headingList .nav-tabs li a:first-child{
   width: 80%;
+  border-radius: 0;
 }
 
 .headingList .nav-tabs li a:last-child{
@@ -217,8 +218,9 @@ button > a {
 .glyphicon{
   line-height: normal;
 }
-.active{
-  background: #337ab7;
+a.lfloat.active{
+  background: #337ab7 !important;
+  color: #fff !important;
 }
 
 .listcontainer{

@@ -1,8 +1,11 @@
 $(document).ready(function() {
 
   // Note Preview
-  $('.headingList .nav li > a:first-child').click(function(event) {
+  $('.headingList .nav li a.lfloat').click(function(event) {
     event.preventDefault();
+    var that=$(this);
+    $('a').removeClass('active');
+    that.addClass('active');
     var url=$(this).data('role');
   //  console.log("url is :="+url);
     $.ajax({

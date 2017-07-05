@@ -10,6 +10,7 @@ var moment      = require('moment');
 // handlers
 
 function getMyNotes (request, reply) {
+  var userId;
   //get token from cookies
   var token = request.state.token;
   //verify the token and get the userId
@@ -74,7 +75,7 @@ function createNewNote (request, reply) {
     noteHeading:request.payload.noteHeading,
     noteValue  :request.payload.noteValue,
     isDelete   :false,
-    lastModified:moment(new Date()).format('MMMM-Do-YYYY, h:mm a')
+    lastModified:moment().format('lll')
   };
 
   //get token from cookies
@@ -169,7 +170,7 @@ function updateNote (request, reply) {
   var noteId = request.params.noteId;
   //get token from cookies
   var token = request.state.token;
-  var lastModified=moment(new Date()).format('MMMM-Do-YYYY, h:mm a');
+  var lastModified=moment().format('lll');
   console.log(lastModified);
 
   var noteUpdated ={
@@ -235,6 +236,9 @@ function deleteNote (request,reply) {
       }
     });
 }
+
+
+
 
 function logoutHandler (request, reply) {
 reply.redirect('/login').unstate('token');

@@ -34,7 +34,7 @@
 			<div class="listcontainer" id="scroll">
 				<ul class="nav nav-tabs nav-stacked">
 					{{#each myNotes}}
-					<li role="presentation">
+					<li role="presentation" class="">
 						<a href="javascript:void(0)" data-role="/preview/{{@key}}" class="lfloat"><span>{{this.noteHeading}}</span></a>
 						<a href="/delete/{{@key}}?type=softdel" class="delete rfloat"><span class="glyphicon glyphicon-remove"></span></a>
 					</li>
