@@ -1,51 +1,62 @@
 <html>
 
-<head>
-	<title>hapi notebook</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="/assets/css/MyStyle.css" rel="stylesheet" type="text/css" media="all">
-</head>
-
-<body>
-	<!-- </header> -->
-	<div class="header">
+	<head>
+		<title>hapi notebook</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="/assets/css/myStyle.css" rel="stylesheet" type="text/css" media="all">
+	</head>
+	<body>
+			<!-- </header> -->
+			<div class="header">
+					<div class="container">
+							<div class="logo">
+									<h1><a href="/">Hapi Notebook</a></h1>
+							</div>
+					</div>
+			</div>
+			<!-- </header> -->
 		<div class="container">
-			<div class="logo">
-				<h1><a href="/">Hapi Notebook</a></h1>
+
+			{{#if successMsg}}
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<strong>Well done!</strong> {{successMsg}}
 			</div>
-		</div>
-	</div>
-	<!-- </header> -->
-	<div class="container">
+			{{/if}} {{#if errMsg}}
+			<div class="alert alert-danger alert-dismissible" role="alert">
+				<strong>Oops!</strong> {{errMsg}}
+			</div>
+			{{/if}}
 
-		{{#if successMsg}}
-		<div class="alert alert-success alert-dismissible" role="alert">
-			<strong>Well done!</strong> {{successMsg}}
-		</div>
-	  {{/if}}
+			<form action="login" method="POST" data-toggle="validator" role="form">
 
-		{{#if errMsg}}
-				<div class="alert alert-danger alert-dismissible" role="alert">
-					<strong>Oops!</strong> {{errMsg}}
+				<div class="form-group has-feedback">
+						<label for="userEmail" class="text-muted">Email address</label>
+						<div class="input-group">
+								<span class="input-group-addon">@</span>
+								<input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
+						</div>
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						<div class="help-block with-errors"></div>
 				</div>
-		{{/if}}
-		<!-- <div class="formContainer"> -->
-		<form action="login" method="POST">
-			<div class="form-group">
-				<label for="exampleInputEmail1" class="text-muted">Email address</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
-				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1" class="text-muted">Password</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-			</div>
-			<div class="form-group">
-				<a href="register" class="register">New user?</a>
-				<button type="submit" name="button" class="btn btn-primary">Submit</button>
-			</div>
-		</form>
-		<!-- </div> -->
-	</div>
-</body>
+				<div class="form-group has-feedback">
+					<label for="PasswordInput" class="text-muted">Password</label>
+					<div class="input-group">
+						<span class="input-group-addon">**</span>
+						<input type="password" class="form-control" maxlength="15" minlength="6" id="PasswordInput" placeholder="Password" name="password" required>
+					</div>
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					<div class="help-block with-errors">Minimum of 6 characters</div>
+				</div>
+				<div class="form-group">
+					<a href="register" class="register">New user?</a>
+					<button type="submit" name="button" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+			<!-- </div> -->
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="/assets/js/validator.min.js"></script>
+	</body>
+
 </html>

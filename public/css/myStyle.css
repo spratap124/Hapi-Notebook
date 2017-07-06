@@ -11,6 +11,7 @@ body {
   color: #333;
   background: url(/assets/img/bg1.png);
   font-family: "Century Gothic",Arial, Helvetica, sans-serif;
+  letter-spacing: 0.02em;
 }
 
 h1{
@@ -216,7 +217,7 @@ button > a {
 }
 
 .glyphicon{
-  line-height: normal;
+  //line-height: normal;
 }
 a.lfloat.active{
   background: #337ab7 !important;
