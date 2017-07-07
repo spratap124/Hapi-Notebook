@@ -69,13 +69,14 @@ function newNotePage (request, reply) {
 }
 
 function createNewNote (request, reply) {
-
+  var noteId = uuid.v1();
   // make a note
   var newNote     = {
     noteHeading:request.payload.noteHeading,
     noteValue  :request.payload.noteValue,
     isDelete   :false,
-    lastModified:moment().format('lll')
+    lastModified:moment().format('lll'),
+    noteId      :noteId
   };
 
   //get token from cookies
@@ -86,7 +87,7 @@ function createNewNote (request, reply) {
       reply.view("401").code(401);
     }else {
       var userId = data;
-      var noteId = uuid.v1();
+
 
       // check if a note is already existing for this user
       if(notes[userId]){
@@ -218,6 +219,7 @@ function deleteNote (request,reply) {
 
         //get all the notes for this user
           var userNotes = notes[userId];
+          console.log(userNotes);
           for(var note in userNotes) {
               //  console.log(note);
                 if(note==noteId){
@@ -226,7 +228,7 @@ function deleteNote (request,reply) {
                     }else if (delType=='undel') {
                       userNotes[note].isDelete = false;
                     }else if(delType=='harddel') {
-                      delete userNotes[note];
+                      delete userNotes[noteId];
                     }
                 }
             };

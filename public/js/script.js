@@ -82,6 +82,7 @@ $(document).ready(function() {
   //CLOSE THE TRASH PANEL
 
   $('.closePanel').click(function() {
+    $(".trashList > ul").empty();
     $('.trashContainer').fadeOut(500);
   });
 
