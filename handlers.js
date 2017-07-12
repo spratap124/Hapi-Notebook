@@ -1,11 +1,11 @@
 'use strict';
-var fs          = require('fs');
-var userModule  = require('./lib/userModule.js');
-var jwt         = require('jsonwebtoken');
-var uuid        = require('uuid');
-var SECRET_KEY  = process.env.SECRET_KEY;
-var notes       = loadNotes();
-var moment      = require('moment');
+var fs          =require('fs');
+var userModule  =require('./lib/userModule.js');
+var jwt         =require('jsonwebtoken');
+var uuid        =require('uuid');
+var SECRET_KEY  =process.env.SECRET_KEY;
+var notes       =loadNotes();
+var moment      =require('moment');
 
 // handlers
 
@@ -23,10 +23,9 @@ function getMyNotes (request, reply) {
       var myUndeletedNotes ={};
       for(var note in myAllNotes){
         if (!myAllNotes[note].isDelete) {
-            myUndeletedNotes[note] = myAllNotes[note];
+          myUndeletedNotes[note] = myAllNotes[note];
         }
       }
-      //console.log(moment("20120620", "YYYYMMDD").fromNow());
       reply.view('myNotes',{myNotes:myUndeletedNotes});
     }
   });
@@ -45,7 +44,7 @@ function myTrash (request, reply) {
       var myDeletedNotes ={};
       for(var note in myAllNotes){
         if (myAllNotes[note].isDelete) {
-            myDeletedNotes[note] = myAllNotes[note];
+          myDeletedNotes[note] = myAllNotes[note];
         }
       }
       reply(myDeletedNotes);
@@ -60,7 +59,7 @@ function newNotePage (request, reply) {
   //verify the token and get the userId
   jwt.verify(token,SECRET_KEY,function(err, data) {
     if(err){
-    reply.view("401").code(401);
+      reply.view("401").code(401);
     }else {
       reply.view('new');
     }
@@ -109,32 +108,31 @@ function createNewNote (request, reply) {
 function notePreview (request, reply) {
   //get the noteId from request
   var noteId = request.params.noteId;
-//console.log("noteid is :======="+noteId);
   //get token from cookies
   var token = request.state.token;
   var notePreview ={};
 
-    jwt.verify(token,SECRET_KEY,function(err,data) {
-      if(err){
-        reply.view("401").code(401);
-      }else {
-        var userId = data;
+  jwt.verify(token,SECRET_KEY,function(err,data) {
+    if(err){
+      reply.view("401").code(401);
+    }else {
+      var userId = data;
 
-        //get all the notes for this user
-          var allNotes = notes[userId];
-          //console.log("all notes==="+allNotes);
-          //console.log(allNotes);
-        for(var note in allNotes) {
-            //  console.log(note);
-              if(note==noteId){
-                notePreview = allNotes[note];
-                notePreview.noteId = noteId;
-              }
-          };
-      }
-      //console.log("notePreview is :==="+notePreview);
-      reply(notePreview).code(200);
-    });
+      //get all the notes for this user
+      var allNotes = notes[userId];
+      //console.log("all notes==="+allNotes);
+      //console.log(allNotes);
+      for(var note in allNotes) {
+        //  console.log(note);
+        if(note==noteId){
+          notePreview = allNotes[note];
+          notePreview.noteId = noteId;
+        }
+      };
+    }
+    //console.log("notePreview is :==="+notePreview);
+    reply(notePreview).code(200);
+  });
 }
 
 function editGET (request, reply) {
@@ -144,26 +142,26 @@ function editGET (request, reply) {
   var token = request.state.token;
   var notePreview ={};
 
-    jwt.verify(token,SECRET_KEY,function(err,data) {
-      if(err){
-        reply.view("401").code(401);
-      }else {
-        var userId = data;
+  jwt.verify(token,SECRET_KEY,function(err,data) {
+    if(err){
+      reply.view("401").code(401);
+    }else {
+      var userId = data;
 
-        //get all the notes for this user
-          var allNotes = notes[userId];
+      //get all the notes for this user
+      var allNotes = notes[userId];
 
-        for(var note in allNotes) {
-              if(note==noteId){
-                notePreview = allNotes[note];
-                notePreview.noteId = noteId;
-              }
-          };
-      }
-      //console.log(notePreview);
-      reply.view('edit',{notePreview}).code(200);
-    });
-  }
+      for(var note in allNotes) {
+        if(note==noteId){
+          notePreview = allNotes[note];
+          notePreview.noteId = noteId;
+        }
+      };
+    }
+    //console.log(notePreview);
+    reply.view('edit',{notePreview}).code(200);
+  });
+}
 
 
 function updateNote (request, reply) {
@@ -175,31 +173,31 @@ function updateNote (request, reply) {
   console.log(lastModified);
 
   var noteUpdated ={
-      noteHeading:request.payload.noteHeading,
-      noteValue:request.payload.noteValue,
-      isDelete: false,
-      lastModified:lastModified
+    noteHeading:request.payload.noteHeading,
+    noteValue:request.payload.noteValue,
+    isDelete: false,
+    lastModified:lastModified
   };
 
-    jwt.verify(token,SECRET_KEY,function(err,data) {
-      if(err){
-        reply.view("401").code(401);
-      }else {
-        var userId = data;
+  jwt.verify(token,SECRET_KEY,function(err,data) {
+    if(err){
+      reply.view("401").code(401);
+    }else {
+      var userId = data;
 
-        //get all the notes for this user
-          var allNotes = notes[userId];
+      //get all the notes for this user
+      var allNotes = notes[userId];
 
-        for(var note in allNotes) {
-              if(note==noteId){
-                allNotes[note]=noteUpdated;
-              }
-          };
-          fs.writeFileSync('./database/notes.json',JSON.stringify(notes));
-      }
+      for(var note in allNotes) {
+        if(note==noteId){
+          allNotes[note]=noteUpdated;
+        }
+      };
+      fs.writeFileSync('./database/notes.json',JSON.stringify(notes));
+    }
 
-      reply.redirect('/myNotes');
-    });
+    reply.redirect('/myNotes');
+  });
 }
 
 function deleteNote (request,reply) {
@@ -211,39 +209,39 @@ function deleteNote (request,reply) {
   //get token from cookies
   var token = request.state.token;
 
-    jwt.verify(token,SECRET_KEY,function(err,data) {
-      if(err){
-        reply.view("401").code(401);
-      }else {
-        var userId = data;
+  jwt.verify(token,SECRET_KEY,function(err,data) {
+    if(err){
+      reply.view("401").code(401);
+    }else {
+      var userId = data;
 
-        //get all the notes for this user
-          var userNotes = notes[userId];
-          console.log(userNotes);
-          for(var note in userNotes) {
-              //  console.log(note);
-                if(note==noteId){
-                    if(delType=='softdel'){
-                      userNotes[note].isDelete = true;
-                    }else if (delType=='undel') {
-                      userNotes[note].isDelete = false;
-                    }else if(delType=='harddel') {
-                      delete userNotes[noteId];
-                    }
-                }
-            };
-          notes[userId] = userNotes;
-          fs.writeFileSync('./database/notes.json',JSON.stringify(notes));
-          reply.redirect('/myNotes');
-      }
-    });
+      //get all the notes for this user
+      var userNotes = notes[userId];
+      console.log(userNotes);
+      for(var note in userNotes) {
+        //  console.log(note);
+        if(note==noteId){
+          if(delType=='softdel'){
+            userNotes[note].isDelete = true;
+          }else if (delType=='undel') {
+            userNotes[note].isDelete = false;
+          }else if(delType=='harddel') {
+            delete userNotes[noteId];
+          }
+        }
+      };
+      notes[userId] = userNotes;
+      fs.writeFileSync('./database/notes.json',JSON.stringify(notes));
+      reply.redirect('/myNotes');
+    }
+  });
 }
 
 
 
 
 function logoutHandler (request, reply) {
-reply.redirect('/login').unstate('token');
+  reply.redirect('/login').unstate('token');
 }
 
 // load notes from database
@@ -260,9 +258,9 @@ module.exports ={
   newNotePage     :newNotePage,                   //path:'/notes/new' method:'GET'
   createNewNote   :createNewNote,                 //path:'/notes/new' method:'POST'
   logoutHandler   :logoutHandler ,                //path:'/logout'
-  notePreview     :notePreview,                   //preview/{noteId}
-  deleteNote      :deleteNote,
-  myTrash         :myTrash,
-  editGET         :editGET,
+  notePreview     :notePreview,                   //path:'preview/{noteId}'
+  deleteNote      :deleteNote,                    //path:'delete/{noteId}'
+  myTrash         :myTrash,                       //path:'myTrash'
+  editGET         :editGET,                       //path:'edit/{noteId}'
   updateNote      :updateNote
 };
