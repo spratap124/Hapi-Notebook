@@ -29,19 +29,19 @@
 			<h1>Edit</h1>
 		</div>
 		<div class="containerBody">
-					<form action="/edit/{{notePreview.noteId}}" method="POST">
-						<div class="form-group">
-							<label for="recipientField" class="lbl">Heading</label>
-							<input type="text" id="recipientField" name="noteHeading" class="form-control" placeholder="" value="{{notePreview.noteHeading}}">
-						</div>
-						<div class="form-group">
-							<label for="recipientEmail" class="lbl">Note</label>
-							<textarea class="form-control textarea" name="noteValue" rows="3" value="">{{notePreview.noteValue}}</textarea>
-						</div>
-						<div class="form-group">
-							<button type="submit" name="button" class="btn btn-primary">Update</button>
-						</div>
-					</form>
+			<form action="/edit/{{notePreview.noteId}}" method="POST">
+				<div class="form-group">
+					<label for="recipientField" class="lbl">Heading</label>
+					<input type="text" id="recipientField" name="noteHeading" class="form-control" placeholder="" value="{{notePreview.noteHeading}}">
+				</div>
+				<div class="form-group">
+					<label for="recipientEmail" class="lbl">Note</label>
+					<textarea class="form-control textarea" name="noteValue" rows="3" value="">{{notePreview.noteValue}}</textarea>
+				</div>
+				<div class="form-group">
+					<button type="submit" name="button" class="btn btn-primary">Update</button>
+				</div>
+			</form>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

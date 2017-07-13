@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
 	<div class="header">
 		<div class="myNotes lfloat">
 			<span>
@@ -25,11 +24,11 @@
 			</span>
 		</div>
 	</div>
-
 	<div class="container wrapper">
 		<div class="containerHeading">
 			<h1>My Notes</h1>
 		</div>
+		<!-- NOTE LIST -->
 		<div class="headingList lfloat sidebar-nav" >
 			<div class="listcontainer" id="scroll">
 				<ul class="nav nav-tabs nav-stacked">
@@ -45,6 +44,8 @@
 				<a href="myTrash"><span class="glyphicon glyphicon-trash"></span></a>
 			</div>
 		</div>
+		<!-- NOTE LIST END-->
+		<!-- NOTE PREVIEW -->
 		<div class="notePreview rfloat">
 			<div class="noteHeading">
 				<span class="lfloat"></span>
@@ -65,8 +66,9 @@
 				<a href="/edit"><span class="glyphicon glyphicon-edit"></span>Edit</a>
 			</div>
 		</div>
+		<!-- NOTE PREVIEW -->
 
-<!-- TRASH -->
+		<!-- TRASH -->
 
 		<div class="trashContainer" id="trash">
 			<div class="trashListWrapper">
@@ -79,27 +81,27 @@
 				<div class="trashList">
 					<ul class="nav nav-tabs">
 
-						<!-- this will be populated throug ajax -->
+						<!-- below lists will be populated throug ajax -->
 
 						<!-- <li>
-							<h5 class="lfloat"></h5>
-							<div class="unDelete lfloat">
-								<a href="/unDelete/{{noteId}}"><span class="glyphicon glyphicon-repeat"></span></a>
-							</div>
-							<div class="hardDelete lfloat">
-								<a href="/hardDelete/{{noteId}}"><span class="glyphicon glyphicon-trash"></span></a>
-							</div>
-						</li> -->
-					</ul>
+						<h5 class="lfloat"></h5>
+						<div class="unDelete lfloat">
+						<a href="/unDelete/{{noteId}}"><span class="glyphicon glyphicon-repeat"></span></a>
+					</div>
+					<div class="hardDelete lfloat">
+					<a href="/hardDelete/{{noteId}}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
-			</div>
-		</div>
+			</li> -->
+		</ul>
+	</div>
+</div>
+</div>
 
 <!-- TRASH END-->
-	</div>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="/assets/js/script.js"></script>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/assets/js/script.js"></script>
 </body>
 
 </html>

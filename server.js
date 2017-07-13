@@ -7,15 +7,15 @@ var inert   = require('inert');   // to serve static files
 
 
 server.connection({
-  port:3000,
-  host:'localhost'
+    port:3000,
+    host:'localhost'
 });
 
 //register a plugin
 server.register([vision,inert],function(err) {
-	if (err) {
-		console.log(err);
-	}
+    if (err) {
+        console.log(err);
+    }
 });
 
 // register the cookie scheme.
@@ -35,14 +35,14 @@ server.route(routes);
 
 //Setup view engines
 server.views({
-  engines:{
-    html:require('handlebars')
-  },
-  relativeTo: __dirname,
-	path: './views'
+    engines:{
+        html:require('handlebars')
+    },
+    relativeTo: __dirname,
+    path: './views'
 });
 
 //start the server
 server.start(function() {
-	console.log('Listening on ' + server.info.uri);
+    console.log('Listening on ' + server.info.uri);
 });

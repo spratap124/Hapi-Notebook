@@ -1,34 +1,34 @@
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-size: 14px;
-  color: #333;
-  background: url(/assets/img/bg1.png);
-  font-family: "Century Gothic",Arial, Helvetica, sans-serif;
-  letter-spacing: 0.02em;
+    font-size: 14px;
+    color: #333;
+    background: url(/assets/img/bg1.png);
+    font-family: "Century Gothic",Arial, Helvetica, sans-serif;
+    letter-spacing: 0.02em;
 }
 
 h1{
-  font-size: 2em !important;
+    font-size: 2em !important;
 }
 
 a,a:link,a:visited,a:hover,a:active{
-  text-decoration: none!important;
-  color: #fff;
+    text-decoration: none!important;
+    color: #fff;
 }
 
 .lfloat{
-  float: left;
+    float: left;
 }
 
 .rfloat{
-  float: right;
+    float: right;
 }
 
 
@@ -37,162 +37,162 @@ a,a:link,a:visited,a:hover,a:active{
 /*HEADER*/
 
 .header{
-  width: 100%;
-  height: 60px;
-  background: #337ab7;
-  border-color: #2e6da4;
-  position: relative;
-  margin: 0 0 50px;
-  -webkit-box-shadow: 0 8px 6px -6px rgb(97, 97, 97);
-  -moz-box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
-  box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
+    width: 100%;
+    height: 60px;
+    background: #337ab7;
+    border-color: #2e6da4;
+    position: relative;
+    margin: 0 0 50px;
+    -webkit-box-shadow: 0 8px 6px -6px rgb(97, 97, 97);
+    -moz-box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
+    box-shadow: 0 8px 6px -6px  rgb(97, 97, 97);
 }
 
 .container{
-  width: 70% !important;
-  margin: 0 auto;
-  padding: 0 !important;
-  position: relative;
+    width: 70% !important;
+    margin: 0 auto;
+    padding: 0 !important;
+    position: relative;
 }
 
 .container h1{
-  color: #fff;
-  line-height: 60px;
-  margin: 0;
+    color: #fff;
+    line-height: 60px;
+    margin: 0;
 }
 
 .headContainer{
-  float: left;
+    float: left;
 }
 
 .logo {
-  text-align: center;
+    text-align: center;
 }
 
 .myNotesContainer{
-  display: inline-block;
-  margin-left: 15%;
+    display: inline-block;
+    margin-left: 15%;
 }
 
 .logout,.myNotes{
-  width: 15%;
-  position: absolute;
-  display: inline-block;
-  height: inherit;
-  top:0;
-  text-align: center;
-  line-height: 60px;
+    width: 15%;
+    position: absolute;
+    display: inline-block;
+    height: inherit;
+    top:0;
+    text-align: center;
+    line-height: 60px;
 }
 
 .header .logout a,.header .myNotes a{
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 .title{
-  font-size: 3em;
-  text-align: center;
-  margin: 100px 0 15px;
+    font-size: 3em;
+    text-align: center;
+    margin: 100px 0 15px;
 }
 
 .sub-title {
-  text-align: center;
-  margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .button {
-  margin: 50px auto;
-  text-align: center;
+    margin: 50px auto;
+    text-align: center;
 }
 
 button > a {
-  color: white;
+    color: white;
 }
 
 /*LOGIN*/
 
 .form-group{
-  width: 40%;
-  margin: 20px auto;
+    width: 40%;
+    margin: 20px auto;
 }
 
 .form-group .register{
-  color: #337ab7;
+    color: #337ab7;
 }
 
 /*CONTENT*/
 
 .wrapper{
-  height: 600px;
-  box-shadow: 1px 1px 1px -1px rgba(0,0,0,0.2), 1px 1px 10px 0px rgba(0,0,0,0.19);
+    height: 600px;
+    box-shadow: 1px 1px 1px -1px rgba(0,0,0,0.2), 1px 1px 10px 0px rgba(0,0,0,0.19);
 }
 
 .containerHeading{
-  width: 20%;
-  height: 50px;
-  background: #337ab7;
-  border-bottom: 1px dashed #ccc;
-  text-align: center;
+    width: 20%;
+    height: 50px;
+    background: #337ab7;
+    border-bottom: 1px dashed #ccc;
+    text-align: center;
 }
 
 .notePreview{
-  width: 80%;
-  height: 600px;
-  position: relative;
-  top: -50px;
+    width: 80%;
+    height: 600px;
+    position: relative;
+    top: -50px;
 }
 .notePreview .noteHeading{
-  width: 100%;
-  height: 50px;
-  padding: 20px;
-  color: #fff;
-  background: #337ab7;
-  position: relative;
-  border-left:1px dashed #ccc;
-  border-bottom:1px dashed #ccc;
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    color: #fff;
+    background: #337ab7;
+    position: relative;
+    border-left:1px dashed #ccc;
+    border-bottom:1px dashed #ccc;
 }
 
 .newNoteLink span{
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .headingList{
-  width: 20%;
-  height: 550px;
-  border-right: 1px solid #ccc;
-  box-shadow: 6px 0px 6px -7px rgb(97, 97, 97)
+    width: 20%;
+    height: 550px;
+    border-right: 1px solid #ccc;
+    box-shadow: 6px 0px 6px -7px rgb(97, 97, 97)
 }
 
 .headingList .nav-tabs{
-  border: none;
+    border: none;
 }
 .headingList .nav-tabs li{
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 1px 0px 0px #cac6c6;
-  cursor: pointer;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 0px 0px #cac6c6;
+    cursor: pointer;
 }
 
 .headingList .nav-tabs li:hover{
-  background: #eee;
+    background: #eee;
 }
 
 .headingList .nav-tabs li a{
-  display: inline-block;
-  color: #525252;
-  border: none;
-  line-height: normal;
+    display: inline-block;
+    color: #525252;
+    border: none;
+    line-height: normal;
 }
 
 
 .headingList .nav-tabs li a:first-child{
-  width: 80%;
-  border-radius: 0;
+    width: 80%;
+    border-radius: 0;
 }
 
 .headingList .nav-tabs li a:last-child{
-  width: 20%;
+    width: 20%;
 }
 
 .headingList .nav-tabs li a:link,
@@ -200,65 +200,65 @@ button > a {
 .headingList .nav-tabs li a:hover,
 .headingList .nav-tabs li a:active
 {
-  border:none;
-  background: none;
+    border:none;
+    background: none;
 }
 
 .headingList .nav-tabs li a.delete{
-  position: absolute;
-  right: 0;
-  right: 0;
-  margin: 0;
-  border-radius: 0;
+    position: absolute;
+    right: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0;
 }
 
 .headingList .nav-tabs li a.delete:hover{
-  background: #ccc;
-  border-radius: 0;
+    background: #ccc;
+    border-radius: 0;
 }
 
 li a.delete > span.glyphicon{
-  line-height: normal;
+    line-height: normal;
 }
 a.lfloat.active{
-  background: #337ab7 !important;
-  color: #fff !important;
+    background: #337ab7 !important;
+    color: #fff !important;
 }
 
 .listcontainer{
-  height: 500px;
-  overflow-y: scroll;
+    height: 500px;
+    overflow-y: scroll;
 }
 
 
 .edit{
-  width: 100%;
-  height: 50px;
-  position: absolute;
-  bottom: 0;
-  background: #337ab7;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background: #337ab7;
 }
 
 .edit a{
-  position: absolute;
-  right: 20px;
-  display: none;
+    position: absolute;
+    right: 20px;
+    display: none;
 }
 
 .edit a > span{
-  margin-right: 10px;
-  line-height: 50px;
+    margin-right: 10px;
+    line-height: 50px;
 }
 
 .edit > .lastModified{
-  position: absolute;
-  left: 20px;
-  display: none;
-  color: #fff;
-  line-height: 50px;
+    position: absolute;
+    left: 20px;
+    display: none;
+    color: #fff;
+    line-height: 50px;
 }
 .edit > .lastModified > span{
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 
@@ -268,182 +268,182 @@ a.lfloat.active{
 
 
 .trash{
-  height: 50px;
-  background: #337ab7;
-  color: #fff;
+    height: 50px;
+    background: #337ab7;
+    color: #fff;
 }
 
 .trash a{
-  float: right;
-  line-height: 50px;
-  font-size: 1.2em;
-  position: relative;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
+    float: right;
+    line-height: 50px;
+    font-size: 1.2em;
+    position: relative;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
 }
 
 .trashContainer{
-  width: 100%;
-  height: 100%;
-  display: none;
-  position: absolute;
-  left: 0;
-  top:0;
-  background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    top:0;
+    background: rgba(0,0,0,0.5);
 }
 
 .trashContainer .trashListWrapper{
-  width: 350px;
-  height: 400px;
-  background: #e5e5e5;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+    width: 350px;
+    height: 400px;
+    background: #e5e5e5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .trashListWrapper .trashHeading{
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  background: #337ab7;
-  color: #fff;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: #337ab7;
+    color: #fff;
 }
 
 .trashHeading h4{
-  margin: 0;
-  line-height: 50px;
-  width: 85%;
+    margin: 0;
+    line-height: 50px;
+    width: 85%;
 }
 
 .trashContainer .closePanel{
-  width: 15%;
-  height: 50px;
-  background: #fff;
-  position: absolute;
-  right: 0;
-  top: 0;
+    width: 15%;
+    height: 50px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .trashContainer .closePanel span{
-  cursor: pointer;
-  color: #337ab7;
-  font-size: 1.8em;
-  line-height: 50px;
+    cursor: pointer;
+    color: #337ab7;
+    font-size: 1.8em;
+    line-height: 50px;
 }
 
 .trashList{
-  width: 100%;
-  height: 350px;
-  position: relative;
-  overflow-y: scroll;
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow-y: scroll;
 }
 
 .trashList ul > li{
-  width: 100%;
-  position: relative;
-  box-shadow: 0 1px 0px 0px #cac6c6;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 1px 0px 0px #cac6c6;
 }
 
 .trashList ul > li h5{
-  display: inline-block;
-  width: 70%;
-  padding: 0 40px;
-  line-height: 50px;
-  margin: 0;
+    display: inline-block;
+    width: 70%;
+    padding: 0 40px;
+    line-height: 50px;
+    margin: 0;
 }
 
 .trashList ul > li .unDelete, .trashList ul > li .hardDelete{
-  width: 15%;
-  height: 50px;
-  border-left: 1px solid #ddd;
-  position: relative;
-  right: 0;
-  top: 0;
+    width: 15%;
+    height: 50px;
+    border-left: 1px solid #ddd;
+    position: relative;
+    right: 0;
+    top: 0;
 }
 
 
 
 .trashList ul > li > div >a{
-  display: block;
-  color: #337ab7;
+    display: block;
+    color: #337ab7;
 }
 
 .trashList ul > li > div >a:hover{
-  background: #337ab7;
-  color: #fff;
+    background: #337ab7;
+    color: #fff;
 }
 
 .trashList ul > li > div >a >span{
-  cursor: pointer;
+    cursor: pointer;
 
-  font-size: 0.9em;
-  line-height: 50px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+    font-size: 0.9em;
+    line-height: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
 
 .fullHeading{
-  width: 100%;
-  height: 50px;
-  background: #337ab7;
-  border-bottom: 1px dashed #ccc;
-  text-align: center;
+    width: 100%;
+    height: 50px;
+    background: #337ab7;
+    border-bottom: 1px dashed #ccc;
+    text-align: center;
 }
 
 .form-control.textarea{
-  width: 470px;
-  height: 250px;
+    width: 470px;
+    height: 250px;
 }
 
 
 .notePreview .noteValue {
-  width: 100%;
-  height: 500px;
-  position: relative;
-  color: #337ab7;
-  padding: 100px;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    color: #337ab7;
+    padding: 100px;
 }
 
 .notePreview .noteValue p {
-  line-height: 25px;
-  white-space: pre;
+    line-height: 25px;
+    white-space: pre;
 }
 
 /*FOOTER*/
 
 
 footer {
-  bottom: 0;
-  position: fixed;
-  margin-bottom: 20px;
-  width: 70%;
-  text-align: center;
-  height: 30px;
+    bottom: 0;
+    position: fixed;
+    margin-bottom: 20px;
+    width: 70%;
+    text-align: center;
+    height: 30px;
 }
 
 .footer a{
-  color: #337ab7;
-  line-height: 30px;
+    color: #337ab7;
+    line-height: 30px;
 }
 
 footer a:hover{
-  color: #5cb85c;
-  text-decoration: none;
+    color: #5cb85c;
+    text-decoration: none;
 }
 
 /*404*/
 
 .content{
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .content h3{
-  margin-top: 30px;
+    margin-top: 30px;
 }
