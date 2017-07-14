@@ -406,7 +406,8 @@ a.lfloat.active{
     height: 500px;
     position: relative;
     color: #337ab7;
-    padding: 100px;
+    padding: 50px;
+    overflow-y: scroll;
 }
 
 .notePreview .noteValue p {
